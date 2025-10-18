@@ -1,1 +1,44 @@
+# Visual Studio
 .vs/
+*.user
+*.suo
+
+# Build directories
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+
+# Publish output
+*.Publish.xml
+*.pubxml
+*.pubxml.user
+
+# ASP.NET specific
+App_Data/
+*.dbmdl
+
+# Entity Framework Migrations
+Migrations/
+
+# Packages
+packages/
+*.nupkg
+
+# Node and front-end
+node_modules/
+dist/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Other
+*.zip
+*.bak
+*.mp4
+*.exe
+*.dll
+*.pdb
+*.cache
+*.DS_Store
+Thumbs.db
