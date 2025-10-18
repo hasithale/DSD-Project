@@ -176,3 +176,9 @@ D:\DSD Projects\DSD.API\obj\Debug\net9.0\refint\DSD.API.dll
 D:\DSD Projects\DSD.API\obj\Debug\net9.0\DSD.API.pdb
 D:\DSD Projects\DSD.API\obj\Debug\net9.0\DSD.API.genruntimeconfig.cache
 D:\DSD Projects\DSD.API\obj\Debug\net9.0\ref\DSD.API.dll
+D:\DSD Projects\DSD.API\bin\Debug\net9.0\BCrypt.Net-Next.dll
+D:\DSD Projects\DSD.API\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\DSD Projects\DSD.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.dll
+D:\DSD Projects\DSD.API\bin\Debug\net9.0\DSD.Core.dll
+D:\DSD Projects\DSD.API\bin\Debug\net9.0\DSD.Core.pdb
+D:\DSD Projects\DSD.API\obj\Debug\net9.0\DSD.API.sourcelink.json

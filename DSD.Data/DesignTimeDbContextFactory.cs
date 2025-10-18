@@ -9,7 +9,7 @@ namespace DSD.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
             // Use localdb for dev by default. Change if you use SQL Server elsewhere.
-            optionsBuilder.UseSqlServer("Server=localhost;Database=DSDRoute;User Id=hasithe;Password=Hazz119;MultipleActiveResultSets=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=localhost;Database=DSDRouteDB;User Id=hasithe;Password=Hazz119;MultipleActiveResultSets=True;TrustServerCertificate=True;");
             return new AppDbContext(optionsBuilder.Options);
         }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DSD.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace DSD.Data
 {
@@ -7,6 +8,6 @@ namespace DSD.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         // Add DbSets later. For now keep empty to allow migrations.
-        // public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

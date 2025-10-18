@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSD.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e2cfc9f10d0e2dd80215c3f31dba1e61c65a932")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSD.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSD.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

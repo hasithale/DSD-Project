@@ -1360,3 +1360,4 @@ D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-android\stamp\_ConvertResourcesCases
 D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-android\DSD.Mobile.sourcelink.json

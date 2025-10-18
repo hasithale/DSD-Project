@@ -12,3 +12,7 @@ D:\DSD Projects\DSD.Data\obj\Debug\net9.0\refint\DSD.Data.dll
 D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.pdb
 D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.genruntimeconfig.cache
 D:\DSD Projects\DSD.Data\obj\Debug\net9.0\ref\DSD.Data.dll
+D:\DSD Projects\DSD.Data\bin\Debug\net9.0\DSD.Core.dll
+D:\DSD Projects\DSD.Data\bin\Debug\net9.0\DSD.Core.pdb
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.sourcelink.json
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.csproj.Up2Date

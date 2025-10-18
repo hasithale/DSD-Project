@@ -1,7 +1,11 @@
-using System;
-using Microsoft.EntityFrameworkCore;
-using Serilog;
+using System.Text;
+using DSD.API;
+using DSD.API.Services;
 using DSD.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,19 +26,71 @@ builder.Host.UseSerilog((ctx, lc) => lc
 // Add services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    // add JWT support to swagger
+    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+        Name = "Authorization",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
+        Scheme = "bearer"
+    });
+    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement{
+        {
+            new Microsoft.OpenApi.Models.OpenApiSecurityScheme{
+                Reference = new Microsoft.OpenApi.Models.OpenApiReference{
+                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            }, new string[] {}
+        }
+    });
+});
 
-// DB: pick connectionstring from config
-var conn = builder.Configuration.GetConnectionString("DefaultConnection") ??
-           "Server=localhost;Database=DSDRoute;User Id=hasithe;Password=Hazz119;MultipleActiveResultSets=True;TrustServerCertificate=True;";
+var configuration = builder.Configuration;
+var jwtKey = configuration.GetValue<string>("Jwt:Key");
+var jwtIssuer = configuration.GetValue<string>("Jwt:Issuer") ?? "DSD.Api";
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(conn)
-);
+if (string.IsNullOrEmpty(jwtKey))
+    throw new Exception("Missing JWT Key. Set Jwt:Key in appsettings.Development.json");
+
+// configure authentication
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false; // for dev, set true in prod
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidIssuer = jwtIssuer,
+        ValidAudience = jwtIssuer,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
+        ValidateLifetime = true
+    };
+});
+
+// add authorization
+builder.Services.AddAuthorization();
+
+// DI for password hasher and token service
+builder.Services.AddSingleton<IPasswordHasher, BcryptPasswordHasher>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+
+// DB
+var conn = configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conn));
 
 var app = builder.Build();
 
-// Swagger + Dev UI
+// swagger in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -42,45 +98,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSerilogRequestLogging();
+
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 
-// Minimal health endpoint
-app.MapGet("/api/ping", () => Results.Json(new { online = true }));
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
-
+// keep the existing ping in root available, and /api/auth/ping is auth protected
+app.MapGet("/", () => "DSD API Running");
+await StartupSeed.SeedAsync(app.Services);
 app.Run();
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
-
-public partial class Program { } // for integration testing if needed
+public partial class Program { }

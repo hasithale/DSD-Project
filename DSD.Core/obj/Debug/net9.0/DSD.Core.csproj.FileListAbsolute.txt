@@ -9,3 +9,5 @@ D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.dll
 D:\DSD Projects\DSD.Core\obj\Debug\net9.0\refint\DSD.Core.dll
 D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.pdb
 D:\DSD Projects\DSD.Core\obj\Debug\net9.0\ref\DSD.Core.dll
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.csproj.AssemblyReference.cache
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.sourcelink.json

@@ -94,3 +94,4 @@ D:\DSD Projects\DSD.Web\obj\Debug\net9.0\refint\DSD.Web.dll
 D:\DSD Projects\DSD.Web\obj\Debug\net9.0\DSD.Web.pdb
 D:\DSD Projects\DSD.Web\obj\Debug\net9.0\DSD.Web.genruntimeconfig.cache
 D:\DSD Projects\DSD.Web\obj\Debug\net9.0\ref\DSD.Web.dll
+D:\DSD Projects\DSD.Web\obj\Debug\net9.0\DSD.Web.sourcelink.json

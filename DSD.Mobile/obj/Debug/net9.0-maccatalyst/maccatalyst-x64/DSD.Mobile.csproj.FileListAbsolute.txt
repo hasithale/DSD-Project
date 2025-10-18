@@ -294,3 +294,4 @@ D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\refint\D
 D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\DSD.Mobile.pdb
 D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\DSD.Mobile.genruntimeconfig.cache
 D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\DSD.Mobile.dll
+D:\DSD Projects\DSD.Mobile\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\DSD.Mobile.sourcelink.json
