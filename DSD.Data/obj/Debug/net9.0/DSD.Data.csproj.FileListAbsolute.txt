@@ -1,0 +1,14 @@
+D:\DSD Projects\DSD.Data\bin\Debug\net9.0\DSD.Data.deps.json
+D:\DSD Projects\DSD.Data\bin\Debug\net9.0\DSD.Data.runtimeconfig.json
+D:\DSD Projects\DSD.Data\bin\Debug\net9.0\DSD.Data.dll
+D:\DSD Projects\DSD.Data\bin\Debug\net9.0\DSD.Data.pdb
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.csproj.AssemblyReference.cache
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.AssemblyInfoInputs.cache
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.AssemblyInfo.cs
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.csproj.CoreCompileInputs.cache
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.dll
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\refint\DSD.Data.dll
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.pdb
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\DSD.Data.genruntimeconfig.cache
+D:\DSD Projects\DSD.Data\obj\Debug\net9.0\ref\DSD.Data.dll

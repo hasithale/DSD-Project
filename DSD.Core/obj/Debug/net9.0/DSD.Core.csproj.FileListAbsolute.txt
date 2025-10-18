@@ -1,0 +1,11 @@
+D:\DSD Projects\DSD.Core\bin\Debug\net9.0\DSD.Core.deps.json
+D:\DSD Projects\DSD.Core\bin\Debug\net9.0\DSD.Core.dll
+D:\DSD Projects\DSD.Core\bin\Debug\net9.0\DSD.Core.pdb
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.AssemblyInfoInputs.cache
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.AssemblyInfo.cs
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.csproj.CoreCompileInputs.cache
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.dll
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\refint\DSD.Core.dll
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\DSD.Core.pdb
+D:\DSD Projects\DSD.Core\obj\Debug\net9.0\ref\DSD.Core.dll
